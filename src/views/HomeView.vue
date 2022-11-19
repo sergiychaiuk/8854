@@ -1,6 +1,12 @@
 <template>
-  <div class="container">home</div>
+  <div class="container">
+    <UserInfo />
+  </div>
 </template>
+
+<script setup>
+import UserInfo from '../components/UserInfo.vue'
+</script>
 
 <style lang="scss">
 * {
