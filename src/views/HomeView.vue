@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <UserInfo :name="user.name" :position="user.position" :offer="user.offer" :photo="user.photo" />
-    <Services />
+    <Services :services="user.services" />
   </div>
 </template>
 

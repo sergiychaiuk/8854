@@ -4,24 +4,54 @@
     <div class="services__chart">
       <div class="chart">
         <div class="chart__bar-list">
-          <div class="chart__bar bar">
-            <div class="bar__line bar_green" style="width: 100%"></div>
-            <div class="bar__title">Manual tour booking</div>
+          <div class="chart__bar bar" v-for="service in servicesList" :key="service.id">
+            <div
+              class="bar__line"
+              :class="[service.number === maxService.number ? 'bar_green' : 'bar_blue']"
+              :style="{ width: service.percentage + '%' }"
+            ></div>
+            <div class="bar__title">{{ service.title }}</div>
           </div>
         </div>
 
         <div class="chart__number">
-          <div class="chart__number-title">11</div>
+          <div class="chart__number-title" v-for="service in services" :key="service.id">
+            {{ service.number }}
+          </div>
         </div>
       </div>
     </div>
 
     <div class="services__total total">
       <div class="total__title">Total</div>
-      <div class="total__number">15</div>
+      <div class="total__number">{{ total }}</div>
     </div>
   </div>
 </template>
+
+<script setup>
+import { computed } from 'vue'
+
+// eslint-disable-next-line vue/no-setup-props-destructure
+const { services } = defineProps({ services: Array })
+
+const maxService = computed(() =>
+  services.reduce((acc, curr) => (acc.number > curr.number ? acc : curr))
+)
+
+const getBarPercentage = (number, maxNumber) => (number * 100) / maxNumber
+
+const servicesList = computed(() =>
+  services.map(el => {
+    return {
+      ...el,
+      percentage: getBarPercentage(el.number, maxService.value.number)
+    }
+  })
+)
+
+const total = computed(() => servicesList.value.reduce((sum, service) => sum + service.number, 0))
+</script>
 
 <style lang="scss">
 .services {
