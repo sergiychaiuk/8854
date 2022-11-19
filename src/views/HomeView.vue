@@ -1,6 +1,7 @@
 <template>
   <div class="container">
     <UserInfo :name="user.name" :position="user.position" :offer="user.offer" :photo="user.photo" />
+    <Services />
   </div>
 </template>
 
@@ -9,6 +10,7 @@ import store from '../store'
 import { computed } from 'vue'
 
 import UserInfo from '../components/UserInfo.vue'
+import Services from '../components/Services.vue'
 
 const user = computed(() => store.state.user)
 </script>
