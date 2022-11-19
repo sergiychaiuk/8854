@@ -1,17 +1,24 @@
 <template>
   <div class="user-info">
-    <div class="user-info__name">Eva Jonson</div>
-    <div class="user-info__position">Sales Manager</div>
+    <div class="user-info__name">{{ name }}</div>
+    <div class="user-info__position">{{ position }}</div>
     <div class="user-info__offer offer">
-      <div class="offer__text">
-        I will find the best offers for you. My services are absolutely free.
-      </div>
+      <div class="offer__text">{{ offer }}</div>
     </div>
     <div class="user-info__photo">
-      <img src="../assets/unsplash_O3ymvT7Wf9U.png" alt="photo" />
+      <img :src="require(`@/${photo}`)" alt="photo" />
     </div>
   </div>
 </template>
+
+<script setup>
+const props = defineProps({
+  name: String,
+  position: String,
+  offer: String,
+  photo: String
+})
+</script>
 
 <style lang="scss">
 .user-info {

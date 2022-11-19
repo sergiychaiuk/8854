@@ -1,11 +1,16 @@
 <template>
   <div class="container">
-    <UserInfo />
+    <UserInfo :name="user.name" :position="user.position" :offer="user.offer" :photo="user.photo" />
   </div>
 </template>
 
 <script setup>
+import store from '../store'
+import { computed } from 'vue'
+
 import UserInfo from '../components/UserInfo.vue'
+
+const user = computed(() => store.state.user)
 </script>
 
 <style lang="scss">
