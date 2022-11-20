@@ -3,7 +3,7 @@
     <UserInfo :name="user.name" :position="user.position" :offer="user.offer" :photo="user.photo" />
     <Services :services="user.services" />
     <Reviews :reviews="user.reviews" :likes="user.likes" />
-    <ReviewForm />
+    <ReviewForm @onReviewSubmit="onReviewSubmit" />
   </div>
 </template>
 
@@ -17,6 +17,10 @@ import Reviews from '../components/Reviews.vue'
 import ReviewForm from '../components/ReviewForm.vue'
 
 const user = computed(() => store.state.user)
+
+const onReviewSubmit = review => {
+  store.dispatch('createReview', review)
+}
 </script>
 
 <style lang="scss">

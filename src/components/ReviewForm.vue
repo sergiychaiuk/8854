@@ -6,21 +6,23 @@
 </template>
 
 <script setup>
-import store from '../store'
 import { ref } from 'vue'
 
-let review = ref({
+const emit = defineEmits(['onReviewSubmit'])
+
+const review = ref({
   name: 'Sergiy Chaiuk',
   content: ''
 })
 
 const create = () => {
   if (review.value.content.trim() === '') {
-    alert('write a review')
+    /*alert('write a review')*/
     return
   }
 
-  store.dispatch('createReview', review.value)
+  emit('onReviewSubmit', review.value)
+
   review.value.content = ''
 }
 
