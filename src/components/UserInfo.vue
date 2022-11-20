@@ -23,24 +23,24 @@ const props = defineProps({
 <style lang="scss">
 .user-info {
   position: relative;
-  padding-top: 1.5rem;
+  padding-top: 1.3125rem;
 
   &__name,
   &__position {
     font-style: normal;
-    margin: 0 1.35714rem 0.142857rem 10.78571rem;
-    line-height: 1.42858rem;
+    margin: 0 1.25rem 0.125rem 9.4375rem;
+    line-height: 1.25rem;
   }
 
   &__name {
     font-weight: 700;
-    font-size: 1.14286rem;
+    font-size: 1rem;
     color: #333333;
   }
 
   &__position {
     font-weight: 400;
-    font-size: 0.857143rem;
+    font-size: 0.75rem;
     color: #808080;
   }
 
@@ -48,15 +48,15 @@ const props = defineProps({
     background: #fffbc8;
     border: 1px solid #dadada;
     border-radius: 5px;
-    margin: 0 1.35714rem 1.07143rem 7.57143rem;
+    margin: 0 1.25rem 0.9375rem 6.625rem;
   }
 
   &__photo {
     position: absolute;
-    width: 8.85715rem;
-    height: 8.85715rem;
-    left: 1.21429rem;
-    top: 1rem;
+    width: 7.75rem;
+    height: 7.75rem;
+    left: 1.0625rem;
+    top: 0.875rem;
 
     & img {
       width: 100%;
@@ -68,15 +68,15 @@ const props = defineProps({
 }
 
 .offer {
-  padding: 0.4285714rem 0 0.5714285rem 3.214285rem;
+  padding: 0.375rem 0 0.5rem 2.8125rem;
 
   &__text {
-    max-width: 14.35715rem;
+    max-width: 12.5625rem;
     word-wrap: break-word;
     font-style: normal;
     font-weight: 400;
-    font-size: 1rem;
-    line-height: 1.42858rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
     color: #333333;
   }
 }

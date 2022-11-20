@@ -51,42 +51,42 @@ const total = computed(() => serviceList.value.reduce((sum, service) => sum + se
 <style lang="scss">
 .services {
   &__title {
-    margin: 0 1.5rem 0.5714285rem 10.78571rem;
-    padding-right: 1.642857rem;
+    margin: 0 1.25rem 0.5rem 9.4375rem;
+    padding-right: 1.5rem;
     text-align: end;
     font-style: normal;
     font-weight: 400;
-    font-size: 0.92857rem;
-    line-height: 1.07142857rem;
+    font-size: 0.8125rem;
+    line-height: 0.9375rem;
     color: #333333;
   }
 
   &__chart {
-    margin: 0 1.5rem 0.6428571rem 10.7142857rem;
+    margin: 0 1.25rem 0.5625rem 9.4375rem;
     border-top: 1px solid #dadada;
     border-bottom: 1px solid #dadada;
-    padding: 1.1428571rem 0;
+    padding: 1rem 0;
   }
 
   &__total {
-    margin: 0 4.42857142rem 1.285714285rem 10.78571rem;
+    margin: 0 3.875rem 1.125rem 9.4375rem;
   }
 }
 
 .chart {
   display: flex;
   justify-content: space-between;
-  padding-right: 2.7857142rem;
+  padding-right: 2.5rem;
 
   &__bar-list {
-    max-width: 216px;
+    max-width: 13.5rem;
     width: 100%;
     border-left: 1px solid rgba(51, 51, 51, 0.2);
-    margin-right: 1.285714285rem;
+    margin-right: 1.125rem;
   }
 
   &__bar {
-    margin-bottom: 0.142857rem;
+    margin-bottom: 0.125rem;
   }
 
   &__bar:last-child {
@@ -103,15 +103,15 @@ const total = computed(() => serviceList.value.reduce((sum, service) => sum + se
   &__number-title {
     font-style: normal;
     font-weight: 700;
-    font-size: 0.92857rem;
-    line-height: 1.07142857rem;
+    font-size: 0.8125rem;
+    line-height: 0.9375rem;
     color: #333333;
   }
 }
 
 .bar {
   position: relative;
-  height: 1.71428571rem;
+  height: 1.5rem;
 
   &__line {
     height: 100%;
@@ -128,12 +128,12 @@ const total = computed(() => serviceList.value.reduce((sum, service) => sum + se
 
   &__title {
     position: absolute;
-    top: -0.142857rem;
-    left: 0.4285714rem;
+    top: -0.125rem;
+    left: 0.375rem;
     font-style: normal;
     font-weight: 400;
-    font-size: 0.92857rem;
-    line-height: 1.8571428rem;
+    font-size: 0.8125rem;
+    line-height: 1.625rem;
     color: #333333;
   }
 }
@@ -147,16 +147,16 @@ const total = computed(() => serviceList.value.reduce((sum, service) => sum + se
   &__number {
     font-style: normal;
     font-weight: 700;
-    font-size: 1.1428571rem;
+    font-size: 1rem;
     color: #333333;
   }
 
   &__title {
-    line-height: 1.8571428rem;
+    line-height: 1.625rem;
   }
 
   &__number {
-    line-height: 1.07142857rem;
+    line-height: 0.9375rem;
   }
 }
 </style>

@@ -37,11 +37,11 @@ document.addEventListener('keyup', event => {
 .review-form {
   background: #f2f2f2;
   text-align: center;
-  padding: 2rem 1.42857rem 2.42857rem 1.42857rem;
+  padding: 1.75rem 1.25rem 2.125rem 1.25rem;
 
   &__input {
     display: block;
-    height: 4.5rem;
+    height: 3.9375rem;
     width: 100%;
     background: #ffffff;
     border: 1px solid #000000;
@@ -49,25 +49,25 @@ document.addEventListener('keyup', event => {
     resize: none;
     font-style: normal;
     font-weight: 400;
-    font-size: 1rem;
-    line-height: 1.35714rem;
+    font-size: 0.875rem;
+    line-height: 1.1875rem;
     color: #333333;
-    padding: 0.7142857rem 1.42857rem;
-    margin-bottom: 1.642857rem;
+    padding: 0.75rem 1.25rem 0.625rem 1.25rem;
+    margin-bottom: 1.4375rem;
   }
 
   &__button {
-    max-width: 20.071428rem;
+    max-width: 17.5625rem;
     width: 100%;
     text-align: center;
     background: #fdd639;
-    border-radius: 1.642857rem;
-    padding: 0.92857rem 0;
+    border-radius: 1.4375rem;
+    padding: 0.8125rem 0;
     font-family: 'PT Sans', sans-serif;
     font-style: normal;
     font-weight: 700;
-    font-size: 1.1428571rem;
-    line-height: 1.5rem;
+    font-size: 1rem;
+    line-height: 1.3125rem;
     color: #333333;
   }
 }

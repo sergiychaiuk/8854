@@ -189,7 +189,7 @@ const toggleAllReviews = () => {
   &__panel {
     display: flex;
     justify-content: space-between;
-    margin: 0 1.42857rem 0.92857rem 1.42857rem;
+    margin: 0 1.25rem 0.75rem 1.25rem;
   }
 
   &__item {
@@ -197,30 +197,30 @@ const toggleAllReviews = () => {
   }
 
   &__title {
-    margin-right: 0.5714285rem;
+    margin-right: 0.5rem;
     font-style: normal;
     font-weight: 700;
-    font-size: 1.14286rem;
-    line-height: 1.14286rem;
+    font-size: 1rem;
+    line-height: 1rem;
     color: #333333;
   }
 
   &__btn {
     font-style: normal;
     font-weight: 400;
-    font-size: 1rem;
-    line-height: 1.14286rem;
+    font-size: 0.875rem;
+    line-height: 1rem;
     text-decoration-line: underline;
     color: #005da1;
     background: none;
   }
 
   &__comment {
-    margin: 0 1.42857rem 1.21429rem 1.42857rem;
+    margin: 0 1.25rem 1.0625rem 1.25rem;
   }
 
   &__comment:last-child {
-    margin: 0 1.42857rem 1.5714285rem 1.42857rem;
+    margin: 0 1.25rem 1.375rem 1.25rem;
   }
 }
 
@@ -231,21 +231,21 @@ const toggleAllReviews = () => {
   &__icon {
     display: flex;
     align-items: center;
-    margin-right: 0.2857142rem;
+    margin-right: 0.25rem;
   }
 
   &__text {
     font-style: normal;
     font-weight: 400;
-    font-size: 0.857143rem;
-    line-height: 1rem;
+    font-size: 0.75rem;
+    line-height: 0.875rem;
     color: #333333;
   }
 }
 
 .likes {
   &__text {
-    margin-right: 1.1428571rem;
+    margin-right: 1rem;
   }
 }
 
@@ -257,29 +257,29 @@ const toggleAllReviews = () => {
   &__name {
     font-style: normal;
     font-weight: 700;
-    font-size: 1rem;
-    line-height: 1.35714rem;
+    font-size: 0.875rem;
+    line-height: 1.1875rem;
     color: #333333;
-    margin-right: 0.5714285rem;
+    margin-right: 0.5rem;
   }
 
   &__date {
     font-style: normal;
     font-weight: 400;
-    font-size: 0.7857142rem;
-    line-height: 1.35714rem;
+    font-size: 0.6875rem;
+    line-height: 1.1875rem;
     color: #808080;
   }
 
   &__content {
     position: relative;
     width: 100%;
-    margin-top: 0.7142857rem;
-    padding: 0.7142857rem 1.42857rem;
+    margin-top: 0.5rem;
+    padding: 0.75rem 1.25rem 0.625rem 1.25rem;
     font-style: normal;
     font-weight: 400;
-    font-size: 1rem;
-    line-height: 1.35714rem;
+    font-size: 0.875rem;
+    line-height: 1.1875rem;
     color: #333333;
     background: #f2fbff;
     border: 1px solid #c4cbcf;
@@ -292,15 +292,15 @@ const toggleAllReviews = () => {
     position: absolute;
     width: 0;
     height: 0;
-    left: 1.55rem;
-    top: -0.714rem;
-    border: 0.358rem solid;
+    left: 1.3125rem;
+    top: -0.5625rem;
+    border: 0.25rem solid;
     border-color: transparent transparent #c4cbcf #c4cbcf;
   }
 
   &__content:after {
-    left: 1.61rem;
-    top: -0.544rem;
+    left: 1.375rem;
+    top: -0.40625rem;
     border-color: transparent transparent #f2fbff #f2fbff;
   }
 }
