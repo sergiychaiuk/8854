@@ -87,6 +87,7 @@ const total = computed(() => servicesList.value.reduce((sum, service) => sum + s
     max-width: 216px;
     width: 100%;
     border-left: 1px solid rgba(51, 51, 51, 0.2);
+    margin-right: 1.285714285rem;
   }
 
   &__bar {

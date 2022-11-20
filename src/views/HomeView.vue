@@ -102,4 +102,11 @@ body {
   max-width: 720px;
   margin: 0 auto;
 }
+
+@media (max-width: 460px) {
+  html,
+  body {
+    font-size: 12px;
+  }
+}
 </style>
