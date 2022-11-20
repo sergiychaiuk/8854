@@ -42,7 +42,7 @@ export default createStore({
   getters: {},
   mutations: {
     setReview: (state, review) => {
-      let tempReview = Object.assign({}, review)
+      const tempReview = Object.assign({}, review)
       tempReview.id = state.user.reviews.slice(-1)[0].id + 1
       tempReview.date = moment().format()
       state.user.reviews.push(tempReview)

@@ -4,7 +4,7 @@
     <div class="services__chart">
       <div class="chart">
         <div class="chart__bar-list">
-          <div class="chart__bar bar" v-for="service in servicesList" :key="service.id">
+          <div class="chart__bar bar" v-for="service in serviceList" :key="service.id">
             <div
               class="bar__line"
               :class="[service.number === maxService.number ? 'bar_green' : 'bar_blue']"
@@ -15,7 +15,7 @@
         </div>
 
         <div class="chart__number">
-          <div class="chart__number-title" v-for="service in services" :key="service.id">
+          <div class="chart__number-title" v-for="service in serviceList" :key="service.id">
             {{ service.number }}
           </div>
         </div>
@@ -41,16 +41,11 @@ const maxService = computed(() =>
 
 const getBarPercentage = (number, maxNumber) => (number * 100) / maxNumber
 
-const servicesList = computed(() =>
-  services.map(el => {
-    return {
-      ...el,
-      percentage: getBarPercentage(el.number, maxService.value.number)
-    }
-  })
+const serviceList = computed(() =>
+  services.map(el => ({ ...el, percentage: getBarPercentage(el.number, maxService.value.number) }))
 )
 
-const total = computed(() => servicesList.value.reduce((sum, service) => sum + service.number, 0))
+const total = computed(() => serviceList.value.reduce((sum, service) => sum + service.number, 0))
 </script>
 
 <style lang="scss">

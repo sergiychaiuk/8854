@@ -148,7 +148,7 @@
       </div>
     </div>
 
-    <div class="reviews__comment comment" v-for="review in reviewsList" :key="review.id">
+    <div class="reviews__comment comment" v-for="review in reviewList" :key="review.id">
       <div class="comment__name">{{ review.name }}</div>
       <div class="comment__date">{{ formattedDate(review.date) }}</div>
       <div class="comment__content">{{ review.content }}</div>
@@ -163,12 +163,12 @@ import moment from 'moment'
 // eslint-disable-next-line vue/no-setup-props-destructure
 const { reviews, likes } = defineProps({ reviews: Array, likes: Number })
 
-let allReviews = ref(false)
-const title = computed(() => (allReviews.value ? 'All reviews' : 'Latest reviews'))
-const titleBtn = computed(() => (allReviews.value ? 'Latest reviews' : 'All reviews'))
+const isShowAll = ref(false)
+const title = computed(() => (isShowAll.value ? 'All reviews' : 'Latest reviews'))
+const titleBtn = computed(() => (isShowAll.value ? 'Latest reviews' : 'All reviews'))
 
-const reviewsList = computed(() =>
-  allReviews.value ? sortByDate([...reviews]) : sortByDate([...reviews]).slice(0, 3)
+const reviewList = computed(() =>
+  isShowAll.value ? sortByDate([...reviews]) : sortByDate([...reviews]).slice(0, 3)
 )
 
 const formattedDate = date => {
@@ -180,7 +180,7 @@ const sortByDate = reviews => {
 }
 
 const toggleAllReviews = () => {
-  allReviews.value = !allReviews.value
+  isShowAll.value = !isShowAll.value
 }
 </script>
 
