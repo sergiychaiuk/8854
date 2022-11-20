@@ -16,10 +16,11 @@ export default createStore({
       likes: 131,
       reviews: [
         {
-          id: 3,
-          name: 'Samuel Jackson',
-          content: "Hey Eva! You're cool. Nice pic!",
-          date: '13 Apr 2022'
+          id: 1,
+          name: 'Ronald Harris',
+          content:
+            'Eva, hello! There is such a question: How can I contact you if I am abroad in roaming?',
+          date: '8 Apr 2022'
         },
         {
           id: 2,
@@ -29,17 +30,26 @@ export default createStore({
           date: '10 Apr 2022'
         },
         {
-          id: 1,
-          name: 'Ronald Harris',
-          content:
-            'Eva, hello! There is such a question: How can I contact you if I am abroad in roaming?',
-          date: '8 Apr 2022'
+          id: 3,
+          name: 'Samuel Jackson',
+          content: "Hey Eva! You're cool. Nice pic!",
+          date: '13 Apr 2022'
         }
       ]
     }
   },
   getters: {},
-  mutations: {},
-  actions: {},
+  mutations: {
+    setReview: (state, review) => {
+      let tempReview = Object.assign({}, review)
+      tempReview.id = state.user.reviews.slice(-1)[0].id + 1
+      state.user.reviews.push(tempReview)
+    }
+  },
+  actions: {
+    createReview({ commit }, review) {
+      commit('setReview', review)
+    }
+  },
   modules: {}
 })

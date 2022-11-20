@@ -2,8 +2,8 @@
   <div class="reviews">
     <div class="reviews__panel">
       <div class="reviews__item">
-        <div class="reviews__title">Latest reviews</div>
-        <button class="reviews__btn">All reviews</button>
+        <div class="reviews__title">{{ title }}</div>
+        <button class="reviews__btn" @click="toggleAllReviews()">{{ titleBtn }}</button>
       </div>
 
       <div class="reviews__item">
@@ -74,7 +74,7 @@
               </defs>
             </svg>
           </div>
-          <div class="likes__text">131</div>
+          <div class="likes__text">{{ likes }}</div>
         </div>
         <div class="comments">
           <div class="comments__icon">
@@ -143,18 +143,41 @@
               </defs>
             </svg>
           </div>
-          <div class="comments__text">14</div>
+          <div class="comments__text">{{ reviews.length }}</div>
         </div>
       </div>
     </div>
 
-    <div class="reviews__comment comment">
-      <div class="comment__name">Samuel Jackson</div>
-      <div class="comment__date">13 Apr 2022</div>
-      <div class="comment__content">Hey Eva! You're cool. Nice pic!</div>
+    <div class="reviews__comment comment" v-for="review in reviewsList" :key="review.id">
+      <div class="comment__name">{{ review.name }}</div>
+      <div class="comment__date">{{ review.date }}</div>
+      <div class="comment__content">{{ review.content }}</div>
     </div>
   </div>
 </template>
+
+<script setup>
+import { computed, ref } from 'vue'
+
+// eslint-disable-next-line vue/no-setup-props-destructure
+const { reviews, likes } = defineProps({ reviews: Array, likes: Number })
+
+let allReviews = ref(false)
+const title = computed(() => (allReviews.value ? 'All reviews' : 'Latest reviews'))
+const titleBtn = computed(() => (allReviews.value ? 'Latest reviews' : 'All reviews'))
+
+const reviewsList = computed(() =>
+  allReviews.value ? sort([...reviews]) : sort([...reviews]).slice(0, 3)
+)
+
+const sort = reviews => {
+  return reviews.sort((a, b) => (a.id < b.id ? 1 : -1))
+}
+
+const toggleAllReviews = () => {
+  allReviews.value = !allReviews.value
+}
+</script>
 
 <style lang="scss">
 .reviews {
@@ -188,7 +211,7 @@
   }
 
   &__comment {
-    margin: 0 1.42857rem 17px 1.42857rem;
+    margin: 0 1.42857rem 1.21429rem 1.42857rem;
   }
 
   &__comment:last-child {
@@ -265,14 +288,14 @@
     width: 0;
     height: 0;
     left: 1.55rem;
-    bottom: 2.85rem;
+    top: -0.714rem;
     border: 0.358rem solid;
     border-color: transparent transparent #c4cbcf #c4cbcf;
   }
 
   &__content:after {
     left: 1.61rem;
-    bottom: 2.68rem;
+    top: -0.544rem;
     border-color: transparent transparent #f2fbff #f2fbff;
   }
 }
