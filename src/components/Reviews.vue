@@ -150,7 +150,7 @@
 
     <div class="reviews__comment comment" v-for="review in reviewsList" :key="review.id">
       <div class="comment__name">{{ review.name }}</div>
-      <div class="comment__date">{{ review.date }}</div>
+      <div class="comment__date">{{ formattedDate(review.date) }}</div>
       <div class="comment__content">{{ review.content }}</div>
     </div>
   </div>
@@ -158,6 +158,7 @@
 
 <script setup>
 import { computed, ref } from 'vue'
+import moment from 'moment'
 
 // eslint-disable-next-line vue/no-setup-props-destructure
 const { reviews, likes } = defineProps({ reviews: Array, likes: Number })
@@ -167,11 +168,15 @@ const title = computed(() => (allReviews.value ? 'All reviews' : 'Latest reviews
 const titleBtn = computed(() => (allReviews.value ? 'Latest reviews' : 'All reviews'))
 
 const reviewsList = computed(() =>
-  allReviews.value ? sort([...reviews]) : sort([...reviews]).slice(0, 3)
+  allReviews.value ? sortByDate([...reviews]) : sortByDate([...reviews]).slice(0, 3)
 )
 
-const sort = reviews => {
-  return reviews.sort((a, b) => (a.id < b.id ? 1 : -1))
+const formattedDate = date => {
+  return moment(new Date(date)).format('D MMM YYYY')
+}
+
+const sortByDate = reviews => {
+  return reviews.sort((a, b) => moment(new Date(b.date)).diff(moment(new Date(a.date))))
 }
 
 const toggleAllReviews = () => {

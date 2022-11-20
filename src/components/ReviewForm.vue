@@ -11,8 +11,7 @@ import { ref } from 'vue'
 
 let review = ref({
   name: 'Sergiy Chaiuk',
-  content: '',
-  date: '13 Apr 2022'
+  content: ''
 })
 
 const create = () => {
